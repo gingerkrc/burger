@@ -1,0 +1,42 @@
+<div class="jumbotron jumbotron-fluid">
+  <div class="container">
+    <h1 class="display-4 text-center">Eat-a-Burger</h1>
+    <img src="http://cdn.onlinewebfonts.com/svg/img_545640.png" alt="burger" width="200" height="150">
+  </div>
+</div>
+
+<div class="p-5 bg-warning text-dark">
+    <form class="create-form text-center">
+    <h2>Make a Burger</h2>
+
+    <div class="form-group">
+    <label for="ca">Burger Name:</label>
+    <input type="text" id="burg" name="name">
+    </div>
+
+    <button class="btn btn-secondary" type="submit">Add Burger</button>
+    </form>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 text-center">
+            <h2>Undevoured Burgers</h2>
+            {{#each burger}}
+                {{#unless devoured}}
+                    {{> burgers/burger-block eat=true}}
+                {{/unless}}
+            {{/each}}
+            </div>
+            <div class="col-md-6 text-center">
+            <h2>Devoured Burgers</h2>
+            {{#each burger}}
+                {{#if devoured}}
+                    {{> burgers/burger-block eat=false}}
+                {{/if}}
+            {{/each}}
+            </div>
+        </div>
+    </div>
+</div>
+
+

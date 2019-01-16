@@ -1,0 +1,10 @@
+<li>
+	{{burger_name}}
+
+	<button class="m-2 eat btn btn-secondary" data-id="{{id}}" data-neweat="{{eat}}">
+		{{#if eat}}GOBBLE GOBBLE!{{else}}VOMIT!{{/if}}
+	</button>
+
+    <button class="m-2 delete-burger btn btn-secondary" data-id="{{this.id}}">DELETE!</button>
+
+</li>
